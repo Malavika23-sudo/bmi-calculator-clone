@@ -5,14 +5,19 @@ import '../constants/constants.dart';
 
 class IconsForCard extends StatelessWidget {
   final Function? iconincrement;
+  final Function? icondecrement;
   final headline;
   final String measure;
-  IconsForCard({this.iconincrement, this.headline, required this.measure});
+  IconsForCard(
+      {this.iconincrement,
+      this.headline,
+      required this.measure,
+      this.icondecrement});
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
@@ -30,10 +35,8 @@ class IconsForCard extends StatelessWidget {
             height: 3.0,
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              SizedBox(
-                width: 20.0,
-              ),
               ElevatedButton(
                 style: ButtonStyle(
                   backgroundColor:
@@ -46,7 +49,8 @@ class IconsForCard extends StatelessWidget {
                 onPressed: () => iconincrement,
                 child: Icon(
                   FontAwesomeIcons.plus,
-                  size: 20.0,
+                  color: kInactiveColour,
+                  size: kSizeofIcon1,
                 ),
               ),
               ElevatedButton(
@@ -58,17 +62,17 @@ class IconsForCard extends StatelessWidget {
                     CircleBorder(),
                   ),
                 ),
-                onPressed: () => iconincrement,
+                onPressed: () => icondecrement,
                 child: Icon(
                   FontAwesomeIcons.minus,
-                  color: Colors.white,
-                  size: 20.0,
+                  color: kInactiveColour,
+                  size: kSizeofIcon1,
                 ),
               ),
-              SizedBox(
-                height: 10.0,
-              ),
             ],
+          ),
+          SizedBox(
+            height: 20.0,
           ),
         ],
       ),

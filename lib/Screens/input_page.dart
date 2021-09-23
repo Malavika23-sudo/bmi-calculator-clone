@@ -7,6 +7,7 @@ import 'package:new_bmi_calculator/Reusable_codes/bottomicons.dart';
 import 'package:new_bmi_calculator/Screens/result.dart';
 import 'package:new_bmi_calculator/calculate_bmi.dart';
 import '../constants/constants.dart';
+import 'package:flutter/services.dart';
 
 enum Gender { male, female }
 
@@ -22,6 +23,14 @@ class _InputPageState extends State<InputPage> {
   int weight = 44;
   int weight2 = 44;
   int age = 24;
+
+  @override
+  void initState() {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: kInactiveColour,
+    ));
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +86,7 @@ class _InputPageState extends State<InputPage> {
                 child: ReusableCard(
                     colour: kInactiveColour,
                     childCard: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         SizedBox(
                           height: 10.0,
@@ -140,6 +149,12 @@ class _InputPageState extends State<InputPage> {
                                 weight2 = weight.toInt();
                               });
                             },
+                            icondecrement: () {
+                              setState(() {
+                                weight = weight - 1;
+                                weight2 = weight.toInt();
+                              });
+                            },
                           ),
                         ],
                       ),
@@ -157,6 +172,12 @@ class _InputPageState extends State<InputPage> {
                               setState(() {
                                 //age++;
                                 age = age + 1;
+                                print(age);
+                              });
+                            },
+                            icondecrement: () {
+                              setState(() {
+                                age = age - 1;
                                 print(age);
                               });
                             },

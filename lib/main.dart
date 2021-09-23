@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:new_bmi_calculator/Screens/input_page.dart';
-
 
 void main() => runApp(BMICalculator());
 
 class BMICalculator extends StatelessWidget {
+  void initState() {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.redAccent,
+    ));
+    //super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     // add 0xFF before the hexcode of colors to use ut in flutter.
@@ -15,12 +22,13 @@ class BMICalculator extends StatelessWidget {
         //accentColor: Colors.purple,
         //textTheme: const TextTheme(bodyText2: TextStyle(color: Colors.white)),
       ),
-      initialRoute: '/',
-      routes: {
-        // When navigating to the "/" route, build the FirstScreen widget.
-        '/': (context) => InputPage(),
-        // When navigating to the "/second" route, build the SecondScreen widget.
-      },
+      home: InputPage(),
+      // initialRoute: '/',
+      // routes: {
+      //   // When navigating to the "/" route, build the FirstScreen widget.
+      //   '/': (context) =>
+      // When navigating to the "/second" route, build the SecondScreen widget.
+      // },
     );
   }
 }

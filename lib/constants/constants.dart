@@ -7,7 +7,7 @@ const kColourofBottomContainers = Color(0xFFEB1555);
 const kIconColourconstant = Color(0xFFBABBC1);
 
 const kSizeofIcon = 60.0;
-const kSizeofIcon2 = 35.0;
+const kSizeofIcon1 = 50.0;
 const kLabelTextStyle = TextStyle(fontSize: 15.0, color: Color(0xFFBABBC1));
 const kLabelTextStyle1 = TextStyle(fontSize: 15.0, color: Colors.white);
 const kLabelTextStyle1ColorChange =
